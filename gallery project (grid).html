@@ -7,24 +7,53 @@
     <title>Gallery</title>
 
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container-flex {
+            display: flex;
+            justify-content: space-evenly;
+            min-height: 100vh;
+            background: linear-gradient(to right, #041308, #0b3317);
+            align-items: center;
+
+        }
+
         .container {
             display: grid;
-            width: 80vw;
+            width: 100vw;
             height: 100vh;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             grid-template-areas:
-                'portfolio gallery gallery'
+                'portfolio  gallery'
             ;
             align-items: center;
+            background: linear-gradient(to right, #041308, #0b3317);
         }
 
         .portfolio {
             grid-area: portfolio;
             justify-items: center;
+            color: white;
+            font-size: 2rem;
         }
 
         .gallery {
             grid-area: gallery;
+        }
+
+        .portfolio-flex {
+            justify-items: center;
+            color: white;
+            font-size: 2rem;
+            flex-basis: 30%;
+        }
+
+        .gallery-flex {
+            flex-basis: 50%;
         }
 
         .gallery-grid {
@@ -46,9 +75,10 @@
             background-blend-mode: hard-light;
             transition: all 1s ease-in-out;
             box-shadow: 0 0 4px #fff;
+            cursor: pointer;
         }
 
-        .item:hover{
+        .item:hover {
             background-color: white;
             background-position: center;
         }
@@ -72,12 +102,12 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="portfolio">
+    <div class="container-flex">
+        <div class="portfolio-flex">
             <h2>Gallery</h2>
             <p>All the pics you need </p>
         </div>
-        <div class="gallery span">
+        <div class="gallery-flex span">
             <div class="gallery-grid">
                 <div class="item row-2" style="background-image: url('waterfall.jpg');">WaterFalls</div>
                 <div class="item column-2" style="background-image: url('hills.jpg');">Hills</div>
